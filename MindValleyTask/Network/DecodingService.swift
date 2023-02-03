@@ -1,0 +1,69 @@
+//
+//  DecodingService.swift
+//  MindValleyTask
+//
+//  Created by Amr on 02/02/2023.
+//
+
+import Foundation
+
+protocol DecodingService {
+    typealias EncodingStrategy = JSONEncoder.KeyEncodingStrategy
+    typealias DecodingStrategy = JSONDecoder.KeyDecodingStrategy
+    var encoder: JSONEncoder { get }
+    var encodingStrategy: EncodingStrategy { get }
+    var decoder: JSONDecoder { get }
+    var decodingStrategy: DecodingStrategy { get }
+    func decode<T: Decodable>(_ data: Data, to type: T.Type) throws -> T
+    func decodeReturningNilOnFailure<T: Decodable>(_ data: Data, to: T.Type) -> T?
+}
+
+class AppDecodingService: DecodingService {
+    
+    var encoder: JSONEncoder { self._encoder }
+    var encodingStrategy: EncodingStrategy {
+        self._encodingStrategy
+    }
+    var decoder: JSONDecoder { self._decoder }
+    var decodingStrategy: DecodingStrategy {
+        self._decodingStrategy
+    }
+    //
+    private let _encodingStrategy: EncodingStrategy
+    private let _decodingStrategy: DecodingStrategy
+    private lazy var _encoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = self.encodingStrategy
+        return encoder
+    }()
+    private lazy var _decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = self.decodingStrategy
+        return decoder
+    }()
+    
+    init(encodingStrategy: EncodingStrategy = .useDefaultKeys,
+         decodingStrategy: DecodingStrategy = .useDefaultKeys) {
+        self._encodingStrategy = encodingStrategy
+        self._decodingStrategy = decodingStrategy
+    }
+    
+    func decode<T: Decodable>(_ data: Data, to type: T.Type) throws -> T {
+        do {
+            return try self.decoder.decode(type.self, from: data)
+        } catch {
+            debugPrint("❌ Failed to decode using given strategy and retrying with default decoding strategy, error: \(error) ❌")
+            let decoderWithoutStrategy = JSONDecoder()
+            return try decoderWithoutStrategy.decode(type.self, from: data)
+        }
+    }
+    
+    func decodeReturningNilOnFailure<T: Decodable>(_ data: Data, to type: T.Type) -> T? {
+        do {
+            return try self.decode(data, to: type)
+        } catch {
+            debugPrint(error)
+            return nil
+        }
+    }
+}
