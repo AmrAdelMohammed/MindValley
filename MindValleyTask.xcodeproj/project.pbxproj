@@ -20,11 +20,10 @@
 		C509F97129877207001CEAB3 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C509F96529877207001CEAB3 /* Roboto-Black.ttf */; };
 		C509F97229877207001CEAB3 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C509F96629877207001CEAB3 /* Roboto-LightItalic.ttf */; };
 		C5134DF829869F40004697D1 /* MindValleyTaskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134DF729869F40004697D1 /* MindValleyTaskApp.swift */; };
-		C5134DFA29869F40004697D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134DF929869F40004697D1 /* ContentView.swift */; };
+		C5134DFA29869F40004697D1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134DF929869F40004697D1 /* HomeView.swift */; };
 		C5134DFC29869F42004697D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5134DFB29869F42004697D1 /* Assets.xcassets */; };
 		C5134DFF29869F42004697D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5134DFE29869F42004697D1 /* Preview Assets.xcassets */; };
 		C5134E0929869F42004697D1 /* MindValleyTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E0829869F42004697D1 /* MindValleyTaskTests.swift */; };
-		C5134E232986B0BA004697D1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C5134E222986B0BA004697D1 /* Alamofire */; };
 		C5134E292986B1F5004697D1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C5134E282986B1F5004697D1 /* SDWebImageSwiftUI */; };
 		C5134E2C2986B47B004697D1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C5134E2B2986B47B004697D1 /* Realm */; };
 		C5134E2E2986B47B004697D1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C5134E2D2986B47B004697D1 /* RealmSwift */; };
@@ -36,7 +35,8 @@
 		C59396A3298BD2DA00386FB3 /* DecodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396A2298BD2DA00386FB3 /* DecodingService.swift */; };
 		C59396A5298BDA9F00386FB3 /* HomeGateway .swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396A4298BDA9F00386FB3 /* HomeGateway .swift */; };
 		C59396A7298C66F800386FB3 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396A6298C66F800386FB3 /* HomeVM.swift */; };
-		C59396AB298C8BA100386FB3 /* CategoriesDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396AA298C8BA100386FB3 /* CategoriesDB.swift */; };
+		C59396AB298C8BA100386FB3 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396AA298C8BA100386FB3 /* RealmDatabase.swift */; };
+		C5F5FAFD298E8EC300581BC0 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		C509F96629877207001CEAB3 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		C5134DF429869F40004697D1 /* MindValleyTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindValleyTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5134DF729869F40004697D1 /* MindValleyTaskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindValleyTaskApp.swift; sourceTree = "<group>"; };
-		C5134DF929869F40004697D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C5134DF929869F40004697D1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C5134DFB29869F42004697D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5134DFE29869F42004697D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C5134E0429869F42004697D1 /* MindValleyTaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MindValleyTaskTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +78,8 @@
 		C59396A2298BD2DA00386FB3 /* DecodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingService.swift; sourceTree = "<group>"; };
 		C59396A4298BDA9F00386FB3 /* HomeGateway .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeGateway .swift"; sourceTree = "<group>"; };
 		C59396A6298C66F800386FB3 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
-		C59396AA298C8BA100386FB3 /* CategoriesDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDB.swift; sourceTree = "<group>"; };
+		C59396AA298C8BA100386FB3 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
+		C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +90,6 @@
 				C5134E2E2986B47B004697D1 /* RealmSwift in Frameworks */,
 				C5134E2C2986B47B004697D1 /* Realm in Frameworks */,
 				C5134E292986B1F5004697D1 /* SDWebImageSwiftUI in Frameworks */,
-				C5134E232986B0BA004697D1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,9 +203,10 @@
 		C59396A8298C66FF00386FB3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C5134DF929869F40004697D1 /* ContentView.swift */,
+				C5134DF929869F40004697D1 /* HomeView.swift */,
 				C59396A4298BDA9F00386FB3 /* HomeGateway .swift */,
 				C59396A6298C66F800386FB3 /* HomeVM.swift */,
+				C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -213,7 +214,7 @@
 		C59396A9298C8B8D00386FB3 /* DB */ = {
 			isa = PBXGroup;
 			children = (
-				C59396AA298C8BA100386FB3 /* CategoriesDB.swift */,
+				C59396AA298C8BA100386FB3 /* RealmDatabase.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -235,7 +236,6 @@
 			);
 			name = MindValleyTask;
 			packageProductDependencies = (
-				C5134E222986B0BA004697D1 /* Alamofire */,
 				C5134E282986B1F5004697D1 /* SDWebImageSwiftUI */,
 				C5134E2B2986B47B004697D1 /* Realm */,
 				C5134E2D2986B47B004697D1 /* RealmSwift */,
@@ -291,7 +291,6 @@
 			);
 			mainGroup = C5134DEB29869F40004697D1;
 			packageReferences = (
-				C5134E212986B0BA004697D1 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				C5134E272986B1F5004697D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				C5134E2A2986B47B004697D1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
@@ -343,11 +342,12 @@
 			files = (
 				C593969F298BCBA000386FB3 /* APIManager.swift in Sources */,
 				C59396A7298C66F800386FB3 /* HomeVM.swift in Sources */,
-				C5134DFA29869F40004697D1 /* ContentView.swift in Sources */,
+				C5134DFA29869F40004697D1 /* HomeView.swift in Sources */,
 				C5134E322986B5B8004697D1 /* NewEpisodesModel.swift in Sources */,
 				C5134DF829869F40004697D1 /* MindValleyTaskApp.swift in Sources */,
-				C59396AB298C8BA100386FB3 /* CategoriesDB.swift in Sources */,
+				C59396AB298C8BA100386FB3 /* RealmDatabase.swift in Sources */,
 				C59396A5298BDA9F00386FB3 /* HomeGateway .swift in Sources */,
+				C5F5FAFD298E8EC300581BC0 /* HomeDataSource.swift in Sources */,
 				C5134E362986B7E2004697D1 /* CategoryModel.swift in Sources */,
 				C5134E342986B630004697D1 /* ChannelModel.swift in Sources */,
 				C59396A3298BD2DA00386FB3 /* DecodingService.swift in Sources */,
@@ -621,14 +621,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C5134E212986B0BA004697D1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		C5134E272986B1F5004697D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -648,11 +640,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C5134E222986B0BA004697D1 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5134E212986B0BA004697D1 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		C5134E282986B1F5004697D1 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C5134E272986B1F5004697D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;

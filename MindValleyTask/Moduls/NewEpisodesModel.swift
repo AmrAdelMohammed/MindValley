@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 // MARK: - Welcome
 struct NewEpisodesModel: Codable {
@@ -18,7 +19,7 @@ struct NewEpisodesModelData: Codable {
 }
 
 // MARK: - Media
-struct Media: Codable {
+class Media: Object, Codable {
     var type, title: String?
     var coverAsset: CoverAsset?
     var channel: NewEpisodesChannel?

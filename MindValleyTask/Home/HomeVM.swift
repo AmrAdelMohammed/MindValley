@@ -6,48 +6,30 @@
 //
 
 import Foundation
+import SwiftUI
 
-class HomeVM{
+class HomeVM: ObservableObject{
     
-    var newEpisodes: [Media]?
-    var channels: [Channel]?
-    var categories: [Category]?
-    let homeGateway = AppHomeGateway()
+    private let homeDataSource: HomeDataSourceProtocol
+    @Published private(set) var newEpisodes: [Media]?
+    @Published private(set) var channels: [Channel]?
+    @Published private(set) var categories: [Category]?
     
+    init(homeDataSource: HomeDataSourceProtocol = HomeDataSource()) {
+        self.homeDataSource = homeDataSource
+    }
     func getNewEpisodes() async{
-        let result = await homeGateway.getNewEpisodes()
-        switch result{
-        case .success(let data):
-            print(data)
-            newEpisodes = data.data?.media
-            break
-        case .failure(let error):
-            print(error)
-        }
+        newEpisodes = await homeDataSource.getNewEpisodes()
+        
     }
     
     func getChannels() async{
-        let result = await homeGateway.getChannel()
-        switch result{
-        case .success(let data):
-            print(data)
-            channels = data.data?.channels
-            break
-        case .failure(let error):
-            print(error)
-        }
+        channels = await homeDataSource.getChannel()
+        
     }
     
     func getCategories() async{
-        let result = await homeGateway.getCategories()
-        switch result{
-        case .success(let data):
-            print(data)
-            categories = data.data?.categories
-            break
-        case .failure(let error):
-            print(error)
-        }
+        categories = await homeDataSource.getCategories()
     }
 
     

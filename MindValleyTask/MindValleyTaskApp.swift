@@ -11,7 +11,7 @@ import SwiftUI
 struct MindValleyTaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
