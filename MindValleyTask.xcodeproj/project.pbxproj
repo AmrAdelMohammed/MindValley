@@ -38,6 +38,8 @@
 		C59A6902299039E20001364F /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A6901299039E20001364F /* CoreDataStackManager.swift */; };
 		C59A690429904C7A0001364F /* CategoryEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A690329904C7A0001364F /* CategoryEntity+CoreDataClass.swift */; };
 		C59A690629904CC30001364F /* CategoryEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A690529904CC30001364F /* CategoryEntity+CoreDataProperties.swift */; };
+		C59A6908299053870001364F /* ChannelsEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A6907299053870001364F /* ChannelsEntity+CoreDataClass.swift */; };
+		C59A690A299053F40001364F /* ChannelsEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A6909299053F40001364F /* ChannelsEntity+CoreDataProperties.swift */; };
 		C5F5FAFD298E8EC300581BC0 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */; };
 		E8E78104299040170068EBAD /* HomeLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E78103299040170068EBAD /* HomeLocalDataSource.swift */; };
 		E8E78107299044940068EBAD /* Episodes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8E78105299044940068EBAD /* Episodes.xcdatamodeld */; };
@@ -89,6 +91,8 @@
 		C59A6901299039E20001364F /* CoreDataStackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		C59A690329904C7A0001364F /* CategoryEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C59A690529904CC30001364F /* CategoryEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C59A6907299053870001364F /* ChannelsEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelsEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C59A6909299053F40001364F /* ChannelsEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChannelsEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		E8E78103299040170068EBAD /* HomeLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDataSource.swift; sourceTree = "<group>"; };
 		E8E78106299044940068EBAD /* Episodes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Episodes.xcdatamodel; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 				E8E7810A299045FD0068EBAD /* EpisodeEntity+CoreDataProperties.swift */,
 				C59A690329904C7A0001364F /* CategoryEntity+CoreDataClass.swift */,
 				C59A690529904CC30001364F /* CategoryEntity+CoreDataProperties.swift */,
+				C59A6907299053870001364F /* ChannelsEntity+CoreDataClass.swift */,
+				C59A6909299053F40001364F /* ChannelsEntity+CoreDataProperties.swift */,
 			);
 			path = DBModels;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 				C593969F298BCBA000386FB3 /* APIManager.swift in Sources */,
 				C59A690429904C7A0001364F /* CategoryEntity+CoreDataClass.swift in Sources */,
 				C59396A7298C66F800386FB3 /* HomeVM.swift in Sources */,
+				C59A690A299053F40001364F /* ChannelsEntity+CoreDataProperties.swift in Sources */,
 				C59A6902299039E20001364F /* CoreDataStackManager.swift in Sources */,
 				C5134DFA29869F40004697D1 /* HomeView.swift in Sources */,
 				C5134E322986B5B8004697D1 /* NewEpisodesModel.swift in Sources */,
@@ -382,6 +389,7 @@
 				C59396A5298BDA9F00386FB3 /* HomeGateway .swift in Sources */,
 				C5F5FAFD298E8EC300581BC0 /* HomeDataSource.swift in Sources */,
 				C5134E362986B7E2004697D1 /* CategoryModel.swift in Sources */,
+				C59A6908299053870001364F /* ChannelsEntity+CoreDataClass.swift in Sources */,
 				C5134E342986B630004697D1 /* ChannelModel.swift in Sources */,
 				C59396A3298BD2DA00386FB3 /* DecodingService.swift in Sources */,
 				C59396A1298BCF9600386FB3 /* APIError.swift in Sources */,

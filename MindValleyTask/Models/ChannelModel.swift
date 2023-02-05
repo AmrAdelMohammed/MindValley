@@ -27,6 +27,17 @@ class Channel:  Codable, Identifiable {
     var iconAsset: IconAsset?
     var coverAsset: CoverAsset?
     var slug: String?
+    
+    init(title: String? = nil, series: [Series]? = nil, mediaCount: Int? = nil, latestMedia: [LatestMedia]? = nil, id: String? = nil, iconAsset: IconAsset? = nil, coverAsset: String? = nil, slug: String? = nil) {
+        self.title = title
+        self.series = series
+        self.mediaCount = mediaCount
+        self.latestMedia = latestMedia
+        self.id = id
+        self.iconAsset = iconAsset
+        self.coverAsset = CoverAsset(url: coverAsset)
+        self.slug = slug
+    }
 }
 
 // MARK: - IconAsset
@@ -34,6 +45,11 @@ struct IconAsset: Codable {
     var thumbnailURL: String?
     var url: String?
 
+    init(thumbnailURL: String? = nil, url: String? = nil) {
+        self.thumbnailURL = thumbnailURL
+        self.url = url
+    }
+    
     enum CodingKeys: String, CodingKey {
         case thumbnailURL = "thumbnailUrl"
         case url

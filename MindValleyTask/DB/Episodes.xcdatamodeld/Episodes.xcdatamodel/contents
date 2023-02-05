@@ -4,8 +4,11 @@
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="ChannelsEntity" representedClassName="ChannelsEntity" syncable="YES">
+        <attribute name="coverAsset" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="mediaCount" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="latestMedia" optional="YES" attributeType="Binary"/>
+        <attribute name="mediaCount" optional="YES" attributeType="String"/>
+        <attribute name="series" optional="YES" attributeType="Binary"/>
         <attribute name="slug" optional="YES" attributeType="String"/>
         <attribute name="thumbnailURLIcon" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
