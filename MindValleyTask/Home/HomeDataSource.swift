@@ -49,7 +49,6 @@ class HomeDataSource: HomeDataSourceProtocol {
         case .failure(_):
             return  []//database.getData()//To get from DB
         }
-//        return res
     }
     
     func getCategories() async -> [Category]? {

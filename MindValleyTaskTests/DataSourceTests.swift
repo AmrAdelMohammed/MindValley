@@ -13,12 +13,10 @@ final class DataSourceTests: XCTestCase {
 
     private var gateway: HomeGatewayMock!
     private var sut: HomeDataSource!
-    private var apiRequestWillSuccess = true
     private var cancellables = Set<AnyCancellable>()
 
     override func setUpWithError() throws {
         self.gateway = HomeGatewayMock()
-        gateway.shouldSuccess = apiRequestWillSuccess
         let coreDataManager = CoreDataStackManager(saveToDisk: false)
         let localDataSource = AppHomeLocalDataSource(dataBaseManager: coreDataManager)
         sut = HomeDataSource(homeGateway: gateway,
@@ -31,10 +29,26 @@ final class DataSourceTests: XCTestCase {
     }
     
     func testCategoriesSave() async {
-        let categories = await self.sut.getCategories()
+        self.gateway.shouldSuccess = true
+        let data = await self.sut.getCategories()
         self.gateway.shouldSuccess = false
-        let dbCategores = await self.sut.getCategories()
-        print("ANSARY", categories!.count)
-        XCTAssertEqual(categories!.count, dbCategores!.count)
+        let dbData = await self.sut.getCategories()
+        XCTAssertEqual(data!.count, dbData!.count)
+    }
+
+    func testChannelsSave() async {
+        self.gateway.shouldSuccess = true
+        let data = await self.sut.getChannel()
+        self.gateway.shouldSuccess = false
+        let dbData = await self.sut.getChannel()
+        XCTAssertEqual(data!.count, dbData!.count)
+    }
+
+    func testNewEpisodesSave() async {
+        self.gateway.shouldSuccess = true
+        let data = await self.sut.getNewEpisodes()
+        self.gateway.shouldSuccess = false
+        let dbData = await self.sut.getNewEpisodes()
+        XCTAssertEqual(data!.count, dbData!.count)
     }
 }
