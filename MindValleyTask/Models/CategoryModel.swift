@@ -20,4 +20,8 @@ struct CategoryData: Codable {
 class Category: Codable, Identifiable {
     @objc dynamic var name: String?
     
+    init(name: String? = nil) {
+        self.name = name
+    }
+    
 }

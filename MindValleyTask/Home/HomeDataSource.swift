@@ -56,11 +56,12 @@ class HomeDataSource: HomeDataSourceProtocol {
         let res = await homeGateway.getCategories()
         switch res{
         case .success(let data):
-//            await database.deleteAllFromObject(Category.self)
-//            database.saveData(data.data?.categories ?? [])
-            return data.data?.categories
+            let categories = data.data?.categories ?? []
+            self.localDataSource.deleteAllCategories()
+            self.localDataSource.saveCategory(categories)
+            return categories
         case .failure(_):
-            return  []//database.getData() //To get from DB
+            return  self.localDataSource.getCategories()
         }
     }
     

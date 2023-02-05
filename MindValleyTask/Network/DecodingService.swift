@@ -16,6 +16,8 @@ protocol DecodingService {
     var decodingStrategy: DecodingStrategy { get }
     func decode<T: Decodable>(_ data: Data, to type: T.Type) throws -> T
     func decodeReturningNilOnFailure<T: Decodable>(_ data: Data, to: T.Type) -> T?
+    func encode<T: Encodable>(_ obj: T) throws -> Data
+    func encodeReturningNilOnFailure<T: Encodable>(_ obj: T) -> Data?
 }
 
 class AppDecodingService: DecodingService {
@@ -66,4 +68,19 @@ class AppDecodingService: DecodingService {
             return nil
         }
     }
+    
+    public func encode<T: Encodable>(_ obj: T) throws -> Data {
+        return try encoder.encode(obj)
+    }
+    
+    public func encodeReturningNilOnFailure<T: Encodable>(_ obj: T) -> Data? {
+        do {
+            return try encoder.encode(obj)
+        } catch {
+            print(error)
+            return nil
+        }
+    }
+    
+    
 }

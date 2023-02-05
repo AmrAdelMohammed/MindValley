@@ -8,11 +8,13 @@
 import Foundation
 
 protocol HomeLocalDataSource {
-    func getCategories()
+    func getCategories() -> [Category]
     func getChannels()
     func getNewEpisodes() -> [Media]
     func saveEpisodes(_ episodes: [Media])
     func deleteAllEpisodes()
+    func saveCategory(_ categories: [Category])
+    func deleteAllCategories()
 }
 
 class AppHomeLocalDataSource: HomeLocalDataSource {
@@ -23,7 +25,17 @@ class AppHomeLocalDataSource: HomeLocalDataSource {
         self.dataBaseManager = dataBaseManager
     }
     
-    func getCategories() {}
+    func getCategories() -> [Category] {
+        do {
+            let categories = try self.dataBaseManager.fetch(query: CategoryEntity.fetchRequest(),
+                                                      output: CategoryEntity.self)
+            return categories.map {
+                Category(name: $0.name)
+            }
+        } catch {
+            return []
+        }
+    }
     
     func getChannels() {}
     
@@ -54,7 +66,20 @@ class AppHomeLocalDataSource: HomeLocalDataSource {
                                     entity: "EpisodeEntity")
     }
     
+    func saveCategory(_ categories: [Category]) {
+        let categories = categories.map {
+            return CategoryEntity.create(dbManager: dataBaseManager,
+                                         name: $0.name ?? "")
+        }
+        self.dataBaseManager.insert(data: categories,
+                                    entity: "CategoryEntity")
+    }
+    
     func deleteAllEpisodes() {
         self.dataBaseManager.deleteAll(entityName: "EpisodeEntity")
+    }
+    
+    func deleteAllCategories() {
+        self.dataBaseManager.deleteAll(entityName: "CategoryEntity")
     }
 }
