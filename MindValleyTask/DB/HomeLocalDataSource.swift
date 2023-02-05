@@ -2,7 +2,7 @@
 //  HomeLocalDataSource.swift
 //  MindValleyTask
 //
-//  Created by Youssef on 05/02/2023.
+//  Created by Amr on 05/02/2023.
 //
 
 import Foundation
@@ -47,9 +47,9 @@ class AppHomeLocalDataSource: HomeLocalDataSource {
             let Channels = try self.dataBaseManager.fetch(query: ChannelsEntity.fetchRequest(),
                                                       output: ChannelsEntity.self)
             return Channels.map {
-                let series: [Series]? = decodingService.decodeReturningNilOnFailure(Data(referencing:$0.series),to: [Series].self)
-                let latestMedia: [LatestMedia]? = decodingService.decodeReturningNilOnFailure(Data(referencing:$0.latestMedia),to: [LatestMedia].self)
-                Channel(title: $0.title, series: series, mediaCount: Int($0.mediaCount ?? "0"), latestMedia: latestMedia, id: $0.id, iconAsset: IconAsset(thumbnailURL: $0.thumbnailURLIcon, url: $0.urlIcon), coverAsset: $0.coverAsset, slug: $0.slug)
+                let series: [Series]? = decodingService.decodeReturningNilOnFailure($0.series as Data,to: [Series].self)
+                let latestMedia: [LatestMedia]? = decodingService.decodeReturningNilOnFailure($0.latestMedia as Data,to: [LatestMedia].self)
+                return Channel(title: $0.title, series: series, mediaCount: Int($0.mediaCount ?? "0"), latestMedia: latestMedia, id: $0.id, iconAsset: IconAsset(thumbnailURL: $0.thumbnailURLIcon, url: $0.urlIcon), coverAsset: $0.coverAsset, slug: $0.slug)
             }
         } catch {
             return []

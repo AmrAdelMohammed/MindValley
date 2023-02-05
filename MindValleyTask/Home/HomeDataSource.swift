@@ -25,30 +25,18 @@ class HomeDataSource: HomeDataSourceProtocol {
         self.localDataSource = localDataSource
     }
     
-    func preSaveChannels(channels: [Channel]) async{
-       
-//        (database as! RealmDatabase).dispatchQueue.async {
-//            var newChannels = [ChannelDB]()
-//            for channel in channels {
-//                newChannels.append(ChannelDB(channel))
-//            }
-////            Task{
-//                 self.database.deleteAllFromObject(ChannelDB.self)
-////            }
-//        }
-        
-//        database.saveData(newChannels)
-    }
-    
     func getChannel() async -> [Channel]? {
         let res = await homeGateway.getChannel()
         switch res{
         case .success(let data):
-            await preSaveChannels(channels: data.data?.channels ?? [])
-            return data.data?.channels
+            let channels = data.data?.channels ?? []
+            self.localDataSource.deleteAllChannels()
+            self.localDataSource.saveChannels(channels)
+            return channels
         case .failure(_):
-            return  []//database.getData()//To get from DB
+            return  self.localDataSource.getChannels()
         }
+//        return  self.localDataSource.getChannels()
     }
     
     func getCategories() async -> [Category]? {

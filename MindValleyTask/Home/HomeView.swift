@@ -23,14 +23,13 @@ struct HomeView: View {
     
     var body: some View {
         
-        
         ScrollView {
             HStack {
                 Text("Channels")
-                    .font(.custom("Roboto-Black", size: 30.0)).fontWeight(.bold).foregroundColor(Color(UIColor(named: "headlineColor")!)).lineLimit(nil)
+                    .font(.custom("Roboto-Black", size: 30.0)).fontWeight(.bold).foregroundColor(Color(UIColor(named: "headlineColor")!)).lineLimit(nil).padding([.top, .trailing], 50.0)
                 Spacer()
             }
-            .padding(.top, 50.0)
+            .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top)
             .frame(height: 0.0)
             VStack(alignment: .leading) {
                 HStack {
@@ -102,7 +101,9 @@ struct HomeView: View {
             .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top )
             .padding(.top, 6.0)
             
-        }.padding(.leading, 20.0) .background(Color(UIColor(named: "appBackgroundColor")!))
+        }.padding(.leading, 20.0).padding([.top, .bottom, .trailing], 0.0) .background(Color(UIColor(named: "appBackgroundColor")!)).edgesIgnoringSafeArea(.all)
+        
+        
     }
     
     
