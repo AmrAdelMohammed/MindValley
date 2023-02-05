@@ -49,7 +49,6 @@ class HomeDataSource: HomeDataSourceProtocol {
         case .failure(_):
             return  []//database.getData()//To get from DB
         }
-//        return res
     }
     
     func getCategories() async -> [Category]? {
@@ -61,7 +60,7 @@ class HomeDataSource: HomeDataSourceProtocol {
             self.localDataSource.saveCategory(categories)
             return categories
         case .failure(_):
-            return  self.localDataSource.getCategories()
+            return self.localDataSource.getCategories()
         }
     }
     

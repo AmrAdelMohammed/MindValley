@@ -5,9 +5,7 @@
 //  Created by Amr on 02/02/2023.
 //
 
-import Foundation
 import SwiftUI
-
 
 class HomeVM: ObservableObject{
     
@@ -24,19 +22,25 @@ class HomeVM: ObservableObject{
             await getCategories()
         }
     }
-    func getNewEpisodes() async{
-        
-        newEpisodes = await homeDataSource.getNewEpisodes() ?? []
-        
-    }
     
-    func getChannels() async{
-        channels = await homeDataSource.getChannel() ?? []
-        
-    }
-    
-    func getCategories() async{
-        categories = await homeDataSource.getCategories() ?? []
+    private func getNewEpisodes() async {
+        let newEpisodes = await homeDataSource.getNewEpisodes() ?? []
+        DispatchQueue.main.async {
+            self.newEpisodes = newEpisodes
+        }
     }
 
+    private func getChannels() async{
+        let channels = await homeDataSource.getChannel() ?? []
+        DispatchQueue.main.async {
+            self.channels = channels
+        }
+    }
+
+    private func getCategories() async{
+        let categories = await homeDataSource.getCategories() ?? []
+        DispatchQueue.main.async {
+            self.categories = categories
+        }
+    }
 }
