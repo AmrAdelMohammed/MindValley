@@ -61,7 +61,7 @@ class HomeDataSource: HomeDataSourceProtocol {
             self.localDataSource.saveCategory(categories)
             return categories
         case .failure(_):
-            return  self.localDataSource.getCategories()
+            return self.localDataSource.getCategories()
         }
     }
     

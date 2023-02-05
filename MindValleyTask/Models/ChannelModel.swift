@@ -18,7 +18,7 @@ struct ChannelData: Codable {
 }
 
 // MARK: - Channel
-class Channel:  Codable, Identifiable {
+struct Channel:  Codable, Identifiable {
     var title: String?
     var series: [Series]?
     var mediaCount: Int?
