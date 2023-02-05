@@ -39,5 +39,4 @@ class HomeVM: ObservableObject{
         categories = await homeDataSource.getCategories() ?? []
     }
 
-    
 }

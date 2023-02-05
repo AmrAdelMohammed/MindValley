@@ -14,11 +14,10 @@ protocol HomeDataSourceProtocol {
     func getNewEpisodes() async -> [Media]?
 }
 
-class HomeDataSource:  HomeDataSourceProtocol {
+class HomeDataSource: HomeDataSourceProtocol {
     
     private let homeGateway: HomeGateway
     private let localDataSource: HomeLocalDataSource
-//    private let database: Database
 
     init(homeGateway: HomeGateway = AppHomeGateway(),
          localDataSource: HomeLocalDataSource = AppHomeLocalDataSource()) {

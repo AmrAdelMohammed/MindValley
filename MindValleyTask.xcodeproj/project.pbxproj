@@ -28,15 +28,12 @@
 		C5134E322986B5B8004697D1 /* NewEpisodesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E312986B5B8004697D1 /* NewEpisodesModel.swift */; };
 		C5134E342986B630004697D1 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E332986B630004697D1 /* ChannelModel.swift */; };
 		C5134E362986B7E2004697D1 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E352986B7E2004697D1 /* CategoryModel.swift */; };
-		C5785D7D298FD16500B77EEA /* EpisodesDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5785D7C298FD16500B77EEA /* EpisodesDM.swift */; };
-		C5785D7F298FDE4100B77EEA /* CategoriesDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5785D7E298FDE4100B77EEA /* CategoriesDB.swift */; };
 		C5785D81298FDF5B00B77EEA /* ChannelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5785D80298FDF5B00B77EEA /* ChannelDB.swift */; };
 		C593969F298BCBA000386FB3 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C593969E298BCBA000386FB3 /* APIManager.swift */; };
 		C59396A1298BCF9600386FB3 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396A0298BCF9600386FB3 /* APIError.swift */; };
 		C59396A3298BD2DA00386FB3 /* DecodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396A2298BD2DA00386FB3 /* DecodingService.swift */; };
 		C59396A5298BDA9F00386FB3 /* HomeGateway .swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396A4298BDA9F00386FB3 /* HomeGateway .swift */; };
 		C59396A7298C66F800386FB3 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396A6298C66F800386FB3 /* HomeVM.swift */; };
-		C59396AB298C8BA100386FB3 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59396AA298C8BA100386FB3 /* RealmDatabase.swift */; };
 		C59A6900299039BA0001364F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A68FF299039BA0001364F /* DatabaseManager.swift */; };
 		C59A6902299039E20001364F /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59A6901299039E20001364F /* CoreDataStackManager.swift */; };
 		C5F5FAFD298E8EC300581BC0 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */; };
@@ -80,15 +77,12 @@
 		C5134E332986B630004697D1 /* ChannelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelModel.swift; sourceTree = "<group>"; };
 		C5134E352986B7E2004697D1 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		C5134E3B2986BEBD004697D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C5785D7C298FD16500B77EEA /* EpisodesDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesDM.swift; sourceTree = "<group>"; };
-		C5785D7E298FDE4100B77EEA /* CategoriesDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDB.swift; sourceTree = "<group>"; };
 		C5785D80298FDF5B00B77EEA /* ChannelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDB.swift; sourceTree = "<group>"; };
 		C593969E298BCBA000386FB3 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		C59396A0298BCF9600386FB3 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		C59396A2298BD2DA00386FB3 /* DecodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingService.swift; sourceTree = "<group>"; };
 		C59396A4298BDA9F00386FB3 /* HomeGateway .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeGateway .swift"; sourceTree = "<group>"; };
 		C59396A6298C66F800386FB3 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
-		C59396AA298C8BA100386FB3 /* RealmDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
 		C59A68FF299039BA0001364F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C59A6901299039E20001364F /* CoreDataStackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
@@ -159,7 +153,7 @@
 			children = (
 				C59396A9298C8B8D00386FB3 /* DB */,
 				C5134E3B2986BEBD004697D1 /* Info.plist */,
-				C5134E302986B4C5004697D1 /* Moduls */,
+				C5134E302986B4C5004697D1 /* Models */,
 				C5134E2F2986B4B7004697D1 /* Network */,
 				C59396A8298C66FF00386FB3 /* Home */,
 				C5134DF729869F40004697D1 /* MindValleyTaskApp.swift */,
@@ -191,18 +185,19 @@
 				C593969E298BCBA000386FB3 /* APIManager.swift */,
 				C59396A0298BCF9600386FB3 /* APIError.swift */,
 				C59396A2298BD2DA00386FB3 /* DecodingService.swift */,
+				C59396A4298BDA9F00386FB3 /* HomeGateway .swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		C5134E302986B4C5004697D1 /* Moduls */ = {
+		C5134E302986B4C5004697D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				C5134E312986B5B8004697D1 /* NewEpisodesModel.swift */,
 				C5134E332986B630004697D1 /* ChannelModel.swift */,
 				C5134E352986B7E2004697D1 /* CategoryModel.swift */,
 			);
-			path = Moduls;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C5134E372986BDDE004697D1 /* Sources */ = {
@@ -217,8 +212,6 @@
 		C5785D7B298FD09A00B77EEA /* DBModels */ = {
 			isa = PBXGroup;
 			children = (
-				C5785D7C298FD16500B77EEA /* EpisodesDM.swift */,
-				C5785D7E298FDE4100B77EEA /* CategoriesDB.swift */,
 				C5785D80298FDF5B00B77EEA /* ChannelDB.swift */,
 				E8E78108299045C90068EBAD /* EpisodeEntity+CoreDataClass.swift */,
 				E8E7810A299045FD0068EBAD /* EpisodeEntity+CoreDataProperties.swift */,
@@ -230,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				C5134DF929869F40004697D1 /* HomeView.swift */,
-				C59396A4298BDA9F00386FB3 /* HomeGateway .swift */,
 				C59396A6298C66F800386FB3 /* HomeVM.swift */,
 				C5F5FAFC298E8EC300581BC0 /* HomeDataSource.swift */,
 			);
@@ -241,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				C5785D7B298FD09A00B77EEA /* DBModels */,
-				C59396AA298C8BA100386FB3 /* RealmDatabase.swift */,
 				C59A68FF299039BA0001364F /* DatabaseManager.swift */,
 				C59A6901299039E20001364F /* CoreDataStackManager.swift */,
 				E8E78103299040170068EBAD /* HomeLocalDataSource.swift */,
@@ -378,15 +369,12 @@
 				E8E78109299045C90068EBAD /* EpisodeEntity+CoreDataClass.swift in Sources */,
 				C5134DF829869F40004697D1 /* MindValleyTaskApp.swift in Sources */,
 				E8E78107299044940068EBAD /* Episodes.xcdatamodeld in Sources */,
-				C59396AB298C8BA100386FB3 /* RealmDatabase.swift in Sources */,
 				C5785D81298FDF5B00B77EEA /* ChannelDB.swift in Sources */,
 				E8E78104299040170068EBAD /* HomeLocalDataSource.swift in Sources */,
 				C59396A5298BDA9F00386FB3 /* HomeGateway .swift in Sources */,
-				C5785D7D298FD16500B77EEA /* EpisodesDM.swift in Sources */,
 				C5F5FAFD298E8EC300581BC0 /* HomeDataSource.swift in Sources */,
 				C5134E362986B7E2004697D1 /* CategoryModel.swift in Sources */,
 				C5134E342986B630004697D1 /* ChannelModel.swift in Sources */,
-				C5785D7F298FDE4100B77EEA /* CategoriesDB.swift in Sources */,
 				C59396A3298BD2DA00386FB3 /* DecodingService.swift in Sources */,
 				C59396A1298BCF9600386FB3 /* APIError.swift in Sources */,
 			);
