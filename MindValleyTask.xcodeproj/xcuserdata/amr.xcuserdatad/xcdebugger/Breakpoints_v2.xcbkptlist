@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EB078C06-24D9-4003-9049-242903FBC645"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB571A3C-F252-49CA-9AE7-BDFD9893EA6F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MindValleyTask/DB/RealmDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "saveData(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FCEB82DB-2773-440C-8491-FAA59BD7B54D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MindValleyTask/DB/RealmDatabase.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A68A5754-4AFC-4805-8265-FA81C6795C5F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MindValleyTask/Moduls/ChannelModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "Series"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "A68A5754-4AFC-4805-8265-FA81C6795C5F - 39f0fb763e4ccf02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MindValleyTask.Series.init() -&gt; MindValleyTask.Series"
+                  moduleName = "MindValleyTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amr/Desktop/MindValleyTask/MindValleyTask/Moduls/ChannelModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "A68A5754-4AFC-4805-8265-FA81C6795C5F - 29c7728cf77760b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MindValleyTask.Series.init(title: Swift.Optional&lt;Swift.String&gt;, coverAsset: Swift.Optional&lt;MindValleyTask.CoverAsset&gt;, id: Swift.Optional&lt;Swift.String&gt;) -&gt; MindValleyTask.Series"
+                  moduleName = "MindValleyTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/amr/Desktop/MindValleyTask/MindValleyTask/Moduls/ChannelModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

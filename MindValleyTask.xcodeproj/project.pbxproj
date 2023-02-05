@@ -25,8 +25,6 @@
 		C5134DFF29869F42004697D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5134DFE29869F42004697D1 /* Preview Assets.xcassets */; };
 		C5134E0929869F42004697D1 /* MindValleyTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E0829869F42004697D1 /* MindValleyTaskTests.swift */; };
 		C5134E292986B1F5004697D1 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C5134E282986B1F5004697D1 /* SDWebImageSwiftUI */; };
-		C5134E2C2986B47B004697D1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C5134E2B2986B47B004697D1 /* Realm */; };
-		C5134E2E2986B47B004697D1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C5134E2D2986B47B004697D1 /* RealmSwift */; };
 		C5134E322986B5B8004697D1 /* NewEpisodesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E312986B5B8004697D1 /* NewEpisodesModel.swift */; };
 		C5134E342986B630004697D1 /* ChannelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E332986B630004697D1 /* ChannelModel.swift */; };
 		C5134E362986B7E2004697D1 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5134E352986B7E2004697D1 /* CategoryModel.swift */; };
@@ -97,8 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5134E2E2986B47B004697D1 /* RealmSwift in Frameworks */,
-				C5134E2C2986B47B004697D1 /* Realm in Frameworks */,
 				C5134E292986B1F5004697D1 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,8 +256,6 @@
 			name = MindValleyTask;
 			packageProductDependencies = (
 				C5134E282986B1F5004697D1 /* SDWebImageSwiftUI */,
-				C5134E2B2986B47B004697D1 /* Realm */,
-				C5134E2D2986B47B004697D1 /* RealmSwift */,
 			);
 			productName = MindValleyTask;
 			productReference = C5134DF429869F40004697D1 /* MindValleyTask.app */;
@@ -315,7 +309,6 @@
 			mainGroup = C5134DEB29869F40004697D1;
 			packageReferences = (
 				C5134E272986B1F5004697D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-				C5134E2A2986B47B004697D1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = C5134DF529869F40004697D1 /* Products */;
 			projectDirPath = "";
@@ -657,14 +650,6 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		C5134E2A2986B47B004697D1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -672,16 +657,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C5134E272986B1F5004697D1 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
-		};
-		C5134E2B2986B47B004697D1 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5134E2A2986B47B004697D1 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		C5134E2D2986B47B004697D1 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C5134E2A2986B47B004697D1 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
