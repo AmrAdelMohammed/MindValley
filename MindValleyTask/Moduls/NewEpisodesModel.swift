@@ -19,10 +19,20 @@ struct NewEpisodesModelData: Codable {
 
 // MARK: - Media
 class Media: Codable, Identifiable {
+
     @objc dynamic var type, title: String?
     var coverAsset: CoverAsset?
     var channel: NewEpisodesChannel?
     
+    init(type: String?,
+         title: String?,
+         coverAsset: String?,
+         channel: String?) {
+        self.type = type
+        self.title = title
+        self.coverAsset = CoverAsset(url: coverAsset)
+        self.channel = NewEpisodesChannel(title: channel)
+    }
 }
 
 // MARK: - Channel

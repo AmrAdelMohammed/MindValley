@@ -8,7 +8,7 @@
 import CoreData
 
 enum CoreDataContainer: String {
-    case Channel = "Channel"
+    case episodes = "Episodes"
 }
 
 class CoreDataStackManager: DataBaseManager {
@@ -17,7 +17,7 @@ class CoreDataStackManager: DataBaseManager {
     private(set) var viewContext: NSManagedObjectContext!
     private(set) var backgroundContext: NSManagedObjectContext!
 
-    init(containerName: CoreDataContainer = .Channel,
+    init(containerName: CoreDataContainer = .episodes,
          saveToDisk: Bool = true) {
         let bundle = Bundle(for: Self.self)
         let modelURL = bundle.url(forResource: containerName.rawValue,

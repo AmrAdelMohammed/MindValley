@@ -15,26 +15,28 @@ protocol HomeDataSourceProtocol {
 }
 
 class HomeDataSource:  HomeDataSourceProtocol {
+    
     private let homeGateway: HomeGateway
+    private let localDataSource: HomeLocalDataSource
+//    private let database: Database
 
-    private let database: Database
-
-    init(homeGateway: HomeGateway = AppHomeGateway(), database: Database = RealmDatabase.shared) {
+    init(homeGateway: HomeGateway = AppHomeGateway(),
+         localDataSource: HomeLocalDataSource = AppHomeLocalDataSource()) {
         self.homeGateway = homeGateway
-        self.database = database
+        self.localDataSource = localDataSource
     }
     
     func preSaveChannels(channels: [Channel]) async{
        
-        (database as! RealmDatabase).dispatchQueue.async {
-            var newChannels = [ChannelDB]()
-            for channel in channels {
-                newChannels.append(ChannelDB(channel))
-            }
-//            Task{
-                 self.database.deleteAllFromObject(ChannelDB.self)
+//        (database as! RealmDatabase).dispatchQueue.async {
+//            var newChannels = [ChannelDB]()
+//            for channel in channels {
+//                newChannels.append(ChannelDB(channel))
 //            }
-        }
+////            Task{
+//                 self.database.deleteAllFromObject(ChannelDB.self)
+////            }
+//        }
         
 //        database.saveData(newChannels)
     }
@@ -67,14 +69,12 @@ class HomeDataSource:  HomeDataSourceProtocol {
         let res = await homeGateway.getNewEpisodes()
         switch res{
         case .success(let data):
-//            Task{
-////            await database.deleteAllFromObject(Media.self)
-//                let savingData = data
-//                database.saveData(savingData.data?.media ?? [])
-//            }
-            return data.data?.media
+            let media = data.data?.media ?? []
+            self.localDataSource.deleteAllEpisodes()
+            self.localDataSource.saveEpisodes(media)
+            return media
         case .failure(_):
-            return  []//database.getData() //To get from DB
+            return self.localDataSource.getNewEpisodes()
         }
     }
 }
