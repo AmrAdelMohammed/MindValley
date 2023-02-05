@@ -8,28 +8,35 @@
 import Foundation
 import SwiftUI
 
+
 class HomeVM: ObservableObject{
     
     private let homeDataSource: HomeDataSourceProtocol
-    @Published private(set) var newEpisodes: [Media]?
-    @Published private(set) var channels: [Channel]?
-    @Published private(set) var categories: [Category]?
+    @Published private(set) var newEpisodes: [Media] = [Media]()
+    @Published private(set) var channels: [Channel] = [Channel]()
+    @Published private(set) var categories: [Category] = [Category]()
     
     init(homeDataSource: HomeDataSourceProtocol = HomeDataSource()) {
         self.homeDataSource = homeDataSource
+        Task{
+            await getNewEpisodes()
+            await getChannels()
+            await getCategories()
+        }
     }
     func getNewEpisodes() async{
-        newEpisodes = await homeDataSource.getNewEpisodes()
+        
+        newEpisodes = await homeDataSource.getNewEpisodes() ?? []
         
     }
     
     func getChannels() async{
-        channels = await homeDataSource.getChannel()
+        channels = await homeDataSource.getChannel() ?? []
         
     }
     
     func getCategories() async{
-        categories = await homeDataSource.getCategories()
+        categories = await homeDataSource.getCategories() ?? []
     }
 
     

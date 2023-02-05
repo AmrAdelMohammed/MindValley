@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 // MARK: - Welcome
 struct ChannelModel: Codable {
@@ -19,7 +18,7 @@ struct ChannelData: Codable {
 }
 
 // MARK: - Channel
-class Channel: Object, Codable {
+class Channel:  Codable, Identifiable {
     var title: String?
     var series: [Series]?
     var mediaCount: Int?
@@ -42,9 +41,10 @@ struct IconAsset: Codable {
 }
 
 // MARK: - LatestMedia
-struct LatestMedia: Codable {
-    var type: TypeEnum?
+struct LatestMedia: Codable, Identifiable {
+    var id: Int?
     var title: String?
+    var type: TypeEnum?
     var coverAsset: CoverAsset?
 }
 
@@ -54,7 +54,7 @@ enum TypeEnum: String, Codable {
 }
 
 // MARK: - Series
-struct Series: Codable {
+struct Series: Codable, Identifiable {
     var title: String?
     var coverAsset: CoverAsset?
     var id: String?

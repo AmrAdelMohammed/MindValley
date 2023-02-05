@@ -17,26 +17,13 @@ class AppHomeGateway: HomeGateway{
     func getChannel() async -> Result<ChannelModel, Error> {
         let urlRequest = URLRequest(url: URL(string: "https://pastebin.com/raw/Xt12uVhM")!)
         let res: Result<ChannelModel, any Error> = await apiManager.request(urlRequest)
-        switch res{
-        case .success(let data):
-            print(data)
-            break
-        case .failure(let error):
-            print(error)
-        }
         return res
     }
     
     func getCategories() async -> Result<CategoryModel, Error> {
         let urlRequest = URLRequest(url: URL(string: "https://pastebin.com/raw/A0CgArX3")!)
         let res: Result<CategoryModel, any Error> = await apiManager.request(urlRequest)
-        switch res{
-        case .success(let data):
-            print(data)
-            break
-        case .failure(let error):
-            print(error)
-        }
+        
         return res
     }
     
@@ -46,13 +33,7 @@ class AppHomeGateway: HomeGateway{
     func getNewEpisodes() async -> Result<NewEpisodesModel, Error> {
         let urlRequest = URLRequest(url: URL(string: "https://pastebin.com/raw/z5AExTtw")!)
         let res: Result<NewEpisodesModel, any Error> = await apiManager.request(urlRequest)
-        switch res{
-        case .success(let data):
-            print(data)
-            break
-        case .failure(let error):
-            print(error)
-        }
+        
         return res
     }
     

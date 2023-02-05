@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 struct CategoryModel: Codable {
     var data: CategoryData?
@@ -18,10 +17,7 @@ struct CategoryData: Codable {
 }
 
 // MARK: - Category
-class Category: Object, Codable {
-    var name: String?
+class Category: Codable, Identifiable {
+    @objc dynamic var name: String?
     
-//    override static func primaryKey() -> String? {
-//        return "name"
-//    }
 }

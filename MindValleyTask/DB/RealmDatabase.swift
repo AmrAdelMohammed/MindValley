@@ -11,6 +11,8 @@ import RealmSwift
 
 protocol Database {
     func saveData<T:Object>(_ objects: [T])
+//    func getData<T:Object>() -> [T]?
+//    func deleteAllFromObject<T: Object>(_ object: T.Type)
     func getData<T:Object>() -> [T]?
     func deleteAllFromObject<T: Object>(_ object: T.Type)
 }
@@ -22,9 +24,13 @@ class RealmDatabase: Database {
     
     var realm: Realm!
     
+    let dispatchQueue = DispatchQueue(label: "com.Amr.MindValley")
     
     private init() {
-        self.realm = try! Realm()
+        dispatchQueue.sync {
+            self.realm = try! Realm()
+        }
+        
     }
     
     func saveData<T:Object>(_ objects: [T]) {
@@ -40,11 +46,15 @@ class RealmDatabase: Database {
     }
     
     func deleteAllFromObject<T: Object>(_ object: T.Type) {
-        let allUploadingObjects = realm.objects(T.self)
+        let personRef = ThreadSafeReference(to: object)
+        dispatchQueue.async {
+            let allUploadingObjects = self.realm.objects(T.self)
 
-        try! realm.write {
-            realm.delete(allUploadingObjects)
+            try! self.realm.write {
+                self.realm.delete(allUploadingObjects)
+            }
         }
+        
     }
     
 }
@@ -54,3 +64,4 @@ extension Results {
         return compactMap { $0 as? T }
     }
 }
+
